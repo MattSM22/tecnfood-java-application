@@ -2,7 +2,9 @@ package View;
 
 import DAO.AlunoDAO;
 import Model.AlunoModel;
+
 import java.io.File;
+
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -16,6 +18,13 @@ public class ViewCadastroAluno extends javax.swing.JInternalFrame {
         initComponents();
     }
     
+    public void clearAllFields(){
+        txtRMAluno.setText("");
+        txtNomeAluno.setText("");
+        txtCursoAluno.setText("");
+        txtModuloAluno.setText("");
+    }
+        
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -26,12 +35,12 @@ public class ViewCadastroAluno extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        btnRMAluno = new javax.swing.JTextField();
+        txtRMAluno = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        btnNomeAluno = new javax.swing.JTextField();
+        txtNomeAluno = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        btnModuloAluno = new javax.swing.JTextField();
-        btnModuloAluno1 = new javax.swing.JTextField();
+        txtModuloAluno = new javax.swing.JTextField();
+        txtCursoAluno = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jcbTurnoAluno = new javax.swing.JComboBox<>();
@@ -40,6 +49,7 @@ public class ViewCadastroAluno extends javax.swing.JInternalFrame {
         btnCloseForm = new javax.swing.JButton();
         btnUploadFile = new javax.swing.JButton();
         lblReadedFile = new javax.swing.JLabel();
+        btnCreateByCSV = new javax.swing.JButton();
 
         jLabel6.setText("jLabel6");
 
@@ -75,19 +85,19 @@ public class ViewCadastroAluno extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
         jLabel2.setText("RM do aluno:");
 
-        btnRMAluno.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        txtRMAluno.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
         jLabel3.setText("Nome do aluno:");
 
-        btnNomeAluno.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        txtNomeAluno.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
         jLabel4.setText("Modulo do aluno:");
 
-        btnModuloAluno.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        txtModuloAluno.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
 
-        btnModuloAluno1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        txtCursoAluno.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
         jLabel5.setText("Curso do aluno:");
@@ -111,10 +121,20 @@ public class ViewCadastroAluno extends javax.swing.JInternalFrame {
         btnClearFields.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         btnClearFields.setText("Limpar campos");
         btnClearFields.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnClearFields.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearFieldsActionPerformed(evt);
+            }
+        });
 
         btnCloseForm.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         btnCloseForm.setText("Fechar Formulário de cadastro");
         btnCloseForm.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCloseForm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCloseFormActionPerformed(evt);
+            }
+        });
 
         btnUploadFile.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         btnUploadFile.setText("Upload CSV de alunos");
@@ -126,6 +146,15 @@ public class ViewCadastroAluno extends javax.swing.JInternalFrame {
         });
 
         lblReadedFile.setFont(new java.awt.Font("Montserrat", 1, 10)); // NOI18N
+
+        btnCreateByCSV.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        btnCreateByCSV.setText("Cadastrar pelo CSV");
+        btnCreateByCSV.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCreateByCSV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateByCSVActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -144,24 +173,27 @@ public class ViewCadastroAluno extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jcbTurnoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(btnModuloAluno))
+                            .addComponent(txtModuloAluno))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(btnModuloAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtCursoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2))
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnNomeAluno)
+                            .addComponent(txtNomeAluno)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnRMAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtRMAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblReadedFile)
-                                    .addComponent(btnUploadFile, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnUploadFile, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnCreateByCSV, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,20 +210,21 @@ public class ViewCadastroAluno extends javax.swing.JInternalFrame {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(btnRMAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnUploadFile, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRMAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUploadFile, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCreateByCSV))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblReadedFile)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(btnNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(btnModuloAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtModuloAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(btnModuloAluno1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCursoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -213,30 +246,59 @@ public class ViewCadastroAluno extends javax.swing.JInternalFrame {
         if (resultFromDialog == JFileChooser.APPROVE_OPTION){
             File uploadedFile = new File(fileUpload.getSelectedFile().getAbsoluteFile().toString());
             uploadedFileFormated = uploadedFile.toString().replaceAll("\\\\", "/");
-            System.out.println(uploadedFileFormated);
             lblReadedFile.setText(uploadedFileFormated);
         }
     }//GEN-LAST:event_btnUploadFileActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         int adicionadoVerify;
-        adicionadoVerify = dao.createAlunoFromCSV(uploadedFileFormated);
-        if (adicionadoVerify > 0){
-            JOptionPane.showMessageDialog(null, "Todos os alunos foram adicionados com sucesso", "Sucesso", 0);
+        if (txtRMAluno.getText().isEmpty() || txtNomeAluno.getText().isEmpty() || txtModuloAluno.getText().isEmpty() || txtCursoAluno.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "É necessário preencher todos os campos antes de realizar o cadastro do aluno.", "Aviso", JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "Ocorreu algum erro durante a inserção dos alunos! Por revise o arquivo enviado, se persistir entre em contato com o suporte.", "Aviso", 0);
+            aluno.setRMAluno(txtRMAluno.getText());
+            aluno.setNomeAluno(txtNomeAluno.getText().toUpperCase());
+            aluno.setModuloAluno(txtModuloAluno.getText());
+            aluno.setCursoAluno(txtCursoAluno.getText());
+            aluno.setTurnoAluno(jcbTurnoAluno.getSelectedItem().toString());
+            adicionadoVerify = dao.createAluno(aluno);
+            
+            if(adicionadoVerify > 0){
+                JOptionPane.showMessageDialog(null, "Todos os alunos foram adicionados com sucesso", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                clearAllFields();
+            } else {
+                JOptionPane.showMessageDialog(null, "Ocorreu algum erro durante a inserção do aluno! Por revise os campos digitados, se persistir entre em contato com o suporte.", "Aviso", JOptionPane.WARNING_MESSAGE);
+            }
         }
     }//GEN-LAST:event_btnCadastrarActionPerformed
+
+    private void btnCreateByCSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateByCSVActionPerformed
+        int adicionadoVerify;
+        adicionadoVerify = dao.createAlunoFromCSV(uploadedFileFormated);
+        if (adicionadoVerify > 0){
+            JOptionPane.showMessageDialog(null, "Todos os alunos foram adicionados com sucesso", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            lblReadedFile.setText("");
+            clearAllFields();
+        } else {
+            JOptionPane.showMessageDialog(null, "Ocorreu algum erro durante a inserção dos alunos! Por revise o arquivo enviado, se persistir entre em contato com o suporte.", "Aviso", JOptionPane.WARNING_MESSAGE);
+            lblReadedFile.setText("");
+            clearAllFields();
+        }
+    }//GEN-LAST:event_btnCreateByCSVActionPerformed
+
+    private void btnCloseFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseFormActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCloseFormActionPerformed
+
+    private void btnClearFieldsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearFieldsActionPerformed
+        clearAllFields();
+    }//GEN-LAST:event_btnClearFieldsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnClearFields;
     private javax.swing.JButton btnCloseForm;
-    private javax.swing.JTextField btnModuloAluno;
-    private javax.swing.JTextField btnModuloAluno1;
-    private javax.swing.JTextField btnNomeAluno;
-    private javax.swing.JTextField btnRMAluno;
+    private javax.swing.JButton btnCreateByCSV;
     private javax.swing.JButton btnUploadFile;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
@@ -250,5 +312,9 @@ public class ViewCadastroAluno extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> jcbTurnoAluno;
     private javax.swing.JLabel lblReadedFile;
+    private javax.swing.JTextField txtCursoAluno;
+    private javax.swing.JTextField txtModuloAluno;
+    private javax.swing.JTextField txtNomeAluno;
+    private javax.swing.JTextField txtRMAluno;
     // End of variables declaration//GEN-END:variables
 }

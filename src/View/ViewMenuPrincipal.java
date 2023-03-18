@@ -38,6 +38,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jDesktopPane = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -49,11 +50,14 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         jmiCadastrarCardapio = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jmiConsulta = new javax.swing.JMenuItem();
+        jmiConsultarAlunos = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
         jMenuItem2.setText("jMenuItem2");
+
+        jMenuItem3.setText("jMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal");
@@ -148,6 +152,15 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jmiConsulta);
 
+        jmiConsultarAlunos.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        jmiConsultarAlunos.setText("Consultar alunos");
+        jmiConsultarAlunos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiConsultarAlunosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmiConsultarAlunos);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Relatórios");
@@ -195,6 +208,13 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         cadAluno.setVisible(true);
     }//GEN-LAST:event_jmiCadastrarAlunosActionPerformed
 
+    private void jmiConsultarAlunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiConsultarAlunosActionPerformed
+        ViewCRUDAluno crudAluno = new ViewCRUDAluno();
+        jDesktopPane.add(crudAluno);
+        centralizaForm(crudAluno);
+        crudAluno.setVisible(true);
+    }//GEN-LAST:event_jmiConsultarAlunosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -239,11 +259,13 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JMenuItem jmiCadastrarAlunos;
     private javax.swing.JMenuItem jmiCadastrarCardapio;
     private javax.swing.JMenuItem jmiCadastroAdm;
     private javax.swing.JMenuItem jmiConsulta;
+    private javax.swing.JMenuItem jmiConsultarAlunos;
     // End of variables declaration//GEN-END:variables
 }
