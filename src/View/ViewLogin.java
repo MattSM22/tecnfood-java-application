@@ -31,6 +31,7 @@ public class ViewLogin extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jEditorPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N

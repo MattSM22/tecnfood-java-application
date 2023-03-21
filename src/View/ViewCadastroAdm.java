@@ -31,22 +31,20 @@ public class ViewCadastroAdm extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Cadastro de Administradores");
 
-        txtAdmNewPassword.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        txtAdmNewPassword.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
 
-        btnCadAdm.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.focusColor"));
-        btnCadAdm.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        btnCadAdm.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         btnCadAdm.setText("Cadastrar Administrador");
-        btnCadAdm.setBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.default.focusColor")));
+        btnCadAdm.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCadAdm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadAdmActionPerformed(evt);
             }
         });
 
-        btnFecharForm.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.default.focusColor"));
-        btnFecharForm.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        btnFecharForm.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         btnFecharForm.setText("Fechar Formulário");
-        btnFecharForm.setBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.default.focusColor")));
+        btnFecharForm.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnFecharForm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFecharFormActionPerformed(evt);
@@ -80,7 +78,7 @@ public class ViewCadastroAdm extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
         jLabel2.setText("Digite o login do usuário:");
 
-        txtAdmNewUser.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        txtAdmNewUser.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
         jLabel4.setText("Digite a senha do usuário:");
@@ -95,12 +93,12 @@ public class ViewCadastroAdm extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCadAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                    .addComponent(btnCadAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtAdmNewUser, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAdmNewPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFecharForm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAdmNewUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                    .addComponent(txtAdmNewPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                    .addComponent(btnFecharForm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
@@ -119,7 +117,7 @@ public class ViewCadastroAdm extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFecharForm, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 13, Short.MAX_VALUE))
         );
 
         pack();

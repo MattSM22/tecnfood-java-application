@@ -51,6 +51,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jmiConsulta = new javax.swing.JMenuItem();
         jmiConsultarAlunos = new javax.swing.JMenuItem();
+        jmiConsultarCardapio = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
@@ -136,6 +137,11 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
 
         jmiCadastrarCardapio.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
         jmiCadastrarCardapio.setText("Cadastrar Cardapio Mensal");
+        jmiCadastrarCardapio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiCadastrarCardapioActionPerformed(evt);
+            }
+        });
         jMenu1.add(jmiCadastrarCardapio);
 
         jMenuBar1.add(jMenu1);
@@ -160,6 +166,15 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jmiConsultarAlunos);
+
+        jmiConsultarCardapio.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        jmiConsultarCardapio.setText("Consultar cardápio");
+        jmiConsultarCardapio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiConsultarCardapioActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmiConsultarCardapio);
 
         jMenuBar1.add(jMenu2);
 
@@ -215,34 +230,21 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         crudAluno.setVisible(true);
     }//GEN-LAST:event_jmiConsultarAlunosActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewMenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jmiCadastrarCardapioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadastrarCardapioActionPerformed
+        ViewCadastroCardapio cadCardapio = new ViewCadastroCardapio();
+        jDesktopPane.add(cadCardapio);
+        centralizaForm(cadCardapio);
+        cadCardapio.setVisible(true);
+    }//GEN-LAST:event_jmiCadastrarCardapioActionPerformed
 
-        /* Create and display the form */
+    private void jmiConsultarCardapioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiConsultarCardapioActionPerformed
+        ViewCRUDCardapio crudCardapio = new ViewCRUDCardapio();
+        jDesktopPane.add(crudCardapio);
+        centralizaForm(crudCardapio);
+        crudCardapio.setVisible(true);
+    }//GEN-LAST:event_jmiConsultarCardapioActionPerformed
+
+    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ViewMenuPrincipal().setVisible(true);
@@ -267,5 +269,6 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiCadastroAdm;
     private javax.swing.JMenuItem jmiConsulta;
     private javax.swing.JMenuItem jmiConsultarAlunos;
+    private javax.swing.JMenuItem jmiConsultarCardapio;
     // End of variables declaration//GEN-END:variables
 }

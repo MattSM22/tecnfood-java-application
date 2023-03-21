@@ -32,13 +32,13 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
-                  <Component id="btnCadAdm" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
+                  <Component id="btnCadAdm" alignment="0" min="-2" pref="234" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="72" max="32767" attributes="0"/>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="txtAdmNewUser" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
-                  <Component id="txtAdmNewPassword" alignment="0" min="-2" pref="236" max="-2" attributes="0"/>
-                  <Component id="btnFecharForm" alignment="1" min="-2" pref="175" max="-2" attributes="0"/>
+                  <Component id="txtAdmNewUser" alignment="1" pref="236" max="32767" attributes="0"/>
+                  <Component id="txtAdmNewPassword" alignment="1" pref="236" max="32767" attributes="0"/>
+                  <Component id="btnFecharForm" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
           </Group>
@@ -63,7 +63,7 @@
                   <Component id="btnCadAdm" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                   <Component id="btnFecharForm" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -72,24 +72,19 @@
     <Component class="javax.swing.JTextField" name="txtAdmNewPassword">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Montserrat" size="12" style="0"/>
+          <Font name="Montserrat" size="14" style="0"/>
         </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnCadAdm">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="eb" green="c3" id="Button.default.focusColor" palette="3" red="98" type="palette"/>
-        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Montserrat" size="14" style="0"/>
+          <Font name="Montserrat" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cadastrar Administrador"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder>
-              <Color PropertyName="color" blue="eb" green="c3" id="Button.default.focusColor" palette="3" red="98" type="palette"/>
-            </LineBorder>
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder/>
           </Border>
         </Property>
       </Properties>
@@ -99,18 +94,13 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnFecharForm">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="eb" green="c3" id="Button.default.focusColor" palette="3" red="98" type="palette"/>
-        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Montserrat" size="14" style="0"/>
+          <Font name="Montserrat" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Fechar Formul&#xe1;rio"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder>
-              <Color PropertyName="color" blue="eb" green="c3" id="Button.default.focusColor" palette="3" red="98" type="palette"/>
-            </LineBorder>
+          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+            <BevelBorder/>
           </Border>
         </Property>
       </Properties>
@@ -175,7 +165,7 @@
     <Component class="javax.swing.JTextField" name="txtAdmNewUser">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Montserrat" size="12" style="0"/>
+          <Font name="Montserrat" size="14" style="0"/>
         </Property>
       </Properties>
     </Component>
